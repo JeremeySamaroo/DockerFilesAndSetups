@@ -9,7 +9,15 @@ RUN apt install curl -y
 RUN echo curl --version
 RUN apt install wget -y
 RUN echo wget --version
+RUN apt -y install systemctl
+RUN apt -y install ufw
+RUN apt install openssh-client -y
 
+RUN apt update && apt install openssh-server sudo -y
+RUN  echo 'root:password' | chpasswd
+RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config
+RUN service ssh start
+EXPOSE 22
 
 RUN mkdir -p /usr/lib/jvm
 
