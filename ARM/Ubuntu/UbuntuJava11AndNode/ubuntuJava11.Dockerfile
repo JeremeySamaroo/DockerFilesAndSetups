@@ -50,3 +50,9 @@ RUN apt install nodejs -y
 RUN apt install npm -y
 
 RUN mkdir -p /app
+
+RUN mkdir -p /sshRunStart
+
+COPY runStartupSSHService.sh /sshRunStart/runStartupSSHService.sh 
+
+ENTRYPOINT /sshRunStart/runStartupSSHService.sh
