@@ -53,6 +53,8 @@ RUN mkdir -p /app
 
 RUN mkdir -p /sshRunStart
 
-COPY runStartupSSHService.sh /sshRunStart/runStartupSSHService.sh 
+COPY runStartupSSHService.sh /sshRunStart/runStartupSSHService.sh
 
-ENTRYPOINT /sshRunStart/runStartupSSHService.sh
+RUN ["chmod", "+x", "/sshRunStart/runStartupSSHService.sh"]
+
+ENTRYPOINT /sshRunStart/runStartupSSHService.sh; /bin/bash;
