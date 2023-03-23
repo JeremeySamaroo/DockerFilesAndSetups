@@ -43,7 +43,7 @@ docker build -t ubuntu_java11_node_img -f ubuntuJava11.Dockerfile .
 docker run --name=JNCB_JAVA11_DEV -v <Path-of-working-code-local>:/app --network=jncbDevNetwork -p 3000:3000 -p 3001:3001 -p 3002:3002 -p 3003:3003 -p 3004:3004 -p 3005:3005 -p 3006:3006 -p 80:80 -it ubuntu_java11_node_img /bin/sh
 
 J_Specific 
-docker run --name=JNCB_JAVA11_DEV -v /Users/jeremeysamaroo/dev/JNCB/01_21Feb2022_Sprint11/01_Sprint11_Build01_21Feb2022:/app --network=jncbDevNetwork --cap-add=NET_ADMIN -p 22:22 -p 3000:3000 -p 3001:3001 -p 3002:3002 -p 3003:3003 -p 3004:3004 -p 3005:3005 -p 3006:3006 -p 80:80 -p 8080:8080  -p 5005:5005 -e JAVA_TOOL_OPTIONS="-agentlib:jdwp=transport=dt_socket,address=*:5005,server=y,suspend=n" -u root -it ubuntu_java11_node_img /bin/sh
+docker run --name=JNCB_JAVA11_DEV -v /Users/jeremeysamaroo/dev/JNCB/01_21Feb2022_Sprint11/01_Sprint11_Build01_21Feb2022:/app --network=jncbDevNetwork --cap-add=NET_ADMIN -p 22:22 -p 3000:3000 -p 3001:3001 -p 3002:3002 -p 3003:3003 -p 3004:3004 -p 3005:3005 -p 3006:3006 -p 80:80 -p 8080:8080  -p 5005:5005 -e JAVA_TOOL_OPTIONS="-agentlib:jdwp=transport=dt_socket,address=*:5005,server=y,suspend=n" -u root -dit ubuntu_java11_node_img /bin/sh
 
 ```
 
