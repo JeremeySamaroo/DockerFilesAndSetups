@@ -35,7 +35,7 @@ docker network create DevNetwork
 
 2) Build Docker API container
 ```
-docker build -t ubuntu_java17_node_img -f ubuntuJava17.Dockerfile .      
+docker build -t ubuntu_amazon_correto_java17_node_img -f ubuntuJava17.Dockerfile .      
 ```
 
 3) Create Docker API container with link to folder
@@ -46,7 +46,11 @@ J_Specific
 docker run --name=Java17DEV -v /Users/jeremeysamaroo/dev/PersonalDev/ProjectV1:/javaDevProjects --network=DevNetwork --cap-add=NET_ADMIN -p 22:22 -p 3000:3000 -p 3001:3001 -p 3002:3002 -p 3003:3003 -p 3004:3004 -p 3005:3005 -p 3006:3006 -p 80:80 -p 8080:8080  -p 5005:5005 -e JAVA_TOOL_OPTIONS="-agentlib:jdwp=transport=dt_socket,address=*:5005,server=y,suspend=n" -u root -dit  ubuntu_java17_node_img /bin/sh
 
 
-docker run --name=UNICOMER_JAVA17_DEV -v /Users/jeremeysamaroo/dev/Unicomer/Projects:/app --network=unicomerDevNetwork --cap-add=NET_ADMIN -p 22:22 -p 8082:8082 -p 3000:3000 -p 3001:3001 -p 3002:3002 -p 3003:3003 -p 3004:3004 -p 3005:3005 -p 3006:3006 -p 80:80 -p 8080:8080  -p 5005:5005 -e JAVA_TOOL_OPTIONS="-agentlib:jdwp=transport=dt_socket,address=*:5005,server=y,suspend=n" -u root -dit ubuntu_java17_node_unicomer_img /bin/sh
+docker run --name=UNICOMER_JAVA17_DEV -v /Users/jeremeysamaroo/dev/Unicomer/Projects:/app --network=unicomerDevNetwork --cap-add=NET_ADMIN -p 22:22 -p 8082:8082 -p 80:80 -p 8080:8080  -p 5005:5005 -e JAVA_TOOL_OPTIONS="-agentlib:jdwp=transport=dt_socket,address=*:5005,server=y,suspend=n" -u root -dit ubuntu_amazon_correto_java17_node_img  /bin/sh
+
+
+docker run --name=Unicomer_Java17_Development -v /Users/jeremeysamaroo/dev/Unicomer/Project1/PGW_Service:app --network=unicomerDevNetwork --cap-add=NET_ADMIN -p 25:22 -p 8082:8082 -p 80:80 -p 8080:8080  -p 5005:5005 -e JAVA_TOOL_OPTIONS="-agentlib:jdwp=transport=dt_socket,address=*:5005,server=y,suspend=n" -u root -dit docker run --name=Unicomer_Java17_Development -v /Users/jeremeysamaroo/dev/Unicomer/Project1/PGW_Service:app --network=unicomerDevNetwork --cap-add=NET_ADMIN -p 25:22 -p 8082:8082 -p 80:80 -p 8080:8080  -p 5005:5005 -e JAVA_TOOL_OPTIONS="-agentlib:jdwp=transport=dt_socket,address=*:5005,server=y,suspend=n" -u root -dit ubuntu_amazon_correto_java17_node_unicomer_img /bin/sh
+
 
 ```
 
