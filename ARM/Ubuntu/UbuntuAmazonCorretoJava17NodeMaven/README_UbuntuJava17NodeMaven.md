@@ -52,6 +52,9 @@ docker run --name=UNICOMER_JAVA17_DEV -v /Users/jeremeysamaroo/dev/Unicomer/Proj
 docker run --name=Unicomer_Java17_Development -v /Users/jeremeysamaroo/dev/Unicomer/Project1/PGW_Service:app --network=unicomerDevNetwork --cap-add=NET_ADMIN -p 25:22 -p 8082:8082 -p 80:80 -p 8080:8080  -p 5005:5005 -e JAVA_TOOL_OPTIONS="-agentlib:jdwp=transport=dt_socket,address=*:5005,server=y,suspend=n" -u root -dit docker run --name=Unicomer_Java17_Development -v /Users/jeremeysamaroo/dev/Unicomer/Project1/PGW_Service:app --network=unicomerDevNetwork --cap-add=NET_ADMIN -p 25:22 -p 8082:8082 -p 80:80 -p 8080:8080  -p 5005:5005 -e JAVA_TOOL_OPTIONS="-agentlib:jdwp=transport=dt_socket,address=*:5005,server=y,suspend=n" -u root -dit ubuntu_amazon_correto_java17_node_unicomer_img /bin/sh
 
 
+docker run --name=PersonalDev_Java17 -v /Users/jeremeysamaroo/dev/PersonalDev/PersonalDevProjects/PersonalDev/PersonalDev:/app  --cap-add=NET_ADMIN -p 30:22 -p 8082:8082 -p 80:80 -p 8080:8080  -p 5005:5005 -e JAVA_TOOL_OPTIONS="-agentlib:jdwp=transport=dt_socket,address=*:5005,server=y,suspend=n"  -u root -dit ubuntu_amazon_correto_java17_node_personal_dev_img /bin/sh
+
+
 ```
 
 ## Create Docker Container for MongoDB
